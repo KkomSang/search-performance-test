@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PW}
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+        session_factory:
+          statement_inspector: bench.support.QueryCounter
+  elasticsearch:
+    uris: http://localhost:9201
+    connection-timeout: 5s
+    socket-timeout: 30s
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: WARN
