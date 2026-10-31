@@ -1,0 +1,12 @@
+.gradle/
+build/
+out/
+results/
+report/
+patch/
+*.log
+*.jtl
+.idea/
+*.iml
+.DS_Store
+__MACOSX/
